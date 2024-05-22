@@ -1,5 +1,4 @@
 from pygame import *
-
 '''Необходимые классы'''
 
 
@@ -43,7 +42,7 @@ class Player(GameSprite):
 
 # Игровая сцена:
 back = (200, 255, 255)  # цвет фона (background)
-win_width = 600
+win_width = 800
 win_height = 500
 window = display.set_mode((win_width, win_height))
 window.fill(back)
@@ -56,7 +55,7 @@ FPS = 60
 
 # создания мяча и ракетки
 racket1 = Player('racket.png', 30, 200, 4, 50, 150)  # при созданни спрайта добавляется еще два параметра
-racket2 = Player('racket.png', 520, 200, 4, 50, 150)
+racket2 = Player('racket.png', 720, 200, 4, 50, 150)
 ball = GameSprite('tenis_ball.png', 200, 200, 4, 50, 50)
 
 font.init()
@@ -86,6 +85,12 @@ while game:
         # если мяч достигает границ экрана меняем направление его движения
         if ball.rect.y > win_height - 50 or ball.rect.y < 0:
             speed_y *= -1
+
+            def func():
+                pass
+
+            def an():
+                pass
 
         # если мяч улетел дальше ракетки, выводим условие проигрыша для первого игрока
         if ball.rect.x < 0:
